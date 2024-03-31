@@ -1,0 +1,3179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetPathInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPathInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPathInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MTCJobList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Level" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="isAuditor" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MTCJobListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MTCJobListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MTCJobListTest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Level" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="isAuditor" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MTCJobListTestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MTCJobListTestResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="chkLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="chkLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chkLoginResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getLevelsbyUserID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getLevelsbyUserIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getLevelsbyUserIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getExtended">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTempID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getExtendedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getExtendedResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getExtendedPP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTempID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getExtendedPPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getExtendedPPResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDictation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDictationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDictationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getNotes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getNotesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getNotesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckOutAuditDictation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Level" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckOutAuditDictationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckOutAuditDictationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckOutDictation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Level" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckOutDictationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckOutDictationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDictationInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PhyID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Level" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDictationInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDictationInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuditTemplates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TemplateID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IsTemplateMod" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuditTemplatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AuditTemplatesResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getInstructions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getInstructionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getInstructionsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPhysicianTemplates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PhyID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPhysicianTemplatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPhysicianTemplatesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTemplateAttributes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TempID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTemplateAttributesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTemplateAttributesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DemoLookUp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DemoAccName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PFName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PLName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MEDRN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DemoLookUpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DemoLookUpResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MTC_DemoLookUp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DemoAccName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PFName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PLName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MEDRN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="APName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DOB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PatID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MTC_DemoLookUpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MTC_DemoLookUpResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getClientComments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getClientCommentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getClientCommentsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMTCClientComments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContractorID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getMTCClientCommentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getMTCClientCommentsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPhySamples">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PhyID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sKeyword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPhySamplesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPhySamplesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getRefPhy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WhereClause" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getRefPhyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getRefPhyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getComments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCommentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCommentsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckInAuditDictation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DS">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckInAuditDictationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckInAuditDictationResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckInDictation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DS">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckInDictationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckInDictationResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTranscriptionStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TransID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CheckInLevel" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserLevel" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Version" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="LineCount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TimeSpent" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTranscriptionStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateTranscriptionStatusResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddNewPatient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OriTransID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserLevel" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddNewPatientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddNewPatientResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompletedJobsList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="JobNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhyFirst" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhyLast" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserLevel" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CompletedJobsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompletedJobsListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuditedJobsList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JobNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhyFirst" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PhyLast" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserLevel" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="isauditor" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuditedJobsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuditedJobsListResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ETS_Files">
+        <s:complexType />
+      </s:element>
+      <s:element name="ETS_FilesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ETS_FilesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SplitAudio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CommandArg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SplitAudioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SplitAudioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getActLocations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getActLocationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getActLocationsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAutoDownloadLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="State" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAutoDownloadLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateAutoDownloadLogResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMailAlerts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strFrom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSubject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBody" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMailAlertsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMailAlertsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getXMLDoc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TranscriptionID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getXMLDocResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getXMLDocResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setXMLDoc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TranscriptionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TranscriptionData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setXMLDocResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="setXMLDocResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="int" type="s:int" />
+      <s:element name="anyType" nillable="true" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetPathInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPathInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetPathInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPathInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="MTCJobListSoapIn">
+    <wsdl:part name="parameters" element="tns:MTCJobList" />
+  </wsdl:message>
+  <wsdl:message name="MTCJobListSoapOut">
+    <wsdl:part name="parameters" element="tns:MTCJobListResponse" />
+  </wsdl:message>
+  <wsdl:message name="MTCJobListTestSoapIn">
+    <wsdl:part name="parameters" element="tns:MTCJobListTest" />
+  </wsdl:message>
+  <wsdl:message name="MTCJobListTestSoapOut">
+    <wsdl:part name="parameters" element="tns:MTCJobListTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="chkLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:chkLogin" />
+  </wsdl:message>
+  <wsdl:message name="chkLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:chkLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="getLevelsbyUserIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getLevelsbyUserID" />
+  </wsdl:message>
+  <wsdl:message name="getLevelsbyUserIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getLevelsbyUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getExtendedSoapIn">
+    <wsdl:part name="parameters" element="tns:getExtended" />
+  </wsdl:message>
+  <wsdl:message name="getExtendedSoapOut">
+    <wsdl:part name="parameters" element="tns:getExtendedResponse" />
+  </wsdl:message>
+  <wsdl:message name="getExtendedPPSoapIn">
+    <wsdl:part name="parameters" element="tns:getExtendedPP" />
+  </wsdl:message>
+  <wsdl:message name="getExtendedPPSoapOut">
+    <wsdl:part name="parameters" element="tns:getExtendedPPResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDictationSoapIn">
+    <wsdl:part name="parameters" element="tns:getDictation" />
+  </wsdl:message>
+  <wsdl:message name="getDictationSoapOut">
+    <wsdl:part name="parameters" element="tns:getDictationResponse" />
+  </wsdl:message>
+  <wsdl:message name="getNotesSoapIn">
+    <wsdl:part name="parameters" element="tns:getNotes" />
+  </wsdl:message>
+  <wsdl:message name="getNotesSoapOut">
+    <wsdl:part name="parameters" element="tns:getNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckOutAuditDictationSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckOutAuditDictation" />
+  </wsdl:message>
+  <wsdl:message name="CheckOutAuditDictationSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckOutAuditDictationResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckOutDictationSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckOutDictation" />
+  </wsdl:message>
+  <wsdl:message name="CheckOutDictationSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckOutDictationResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDictationInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:getDictationInfo" />
+  </wsdl:message>
+  <wsdl:message name="getDictationInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:getDictationInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuditTemplatesSoapIn">
+    <wsdl:part name="parameters" element="tns:AuditTemplates" />
+  </wsdl:message>
+  <wsdl:message name="AuditTemplatesSoapOut">
+    <wsdl:part name="parameters" element="tns:AuditTemplatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getInstructionsSoapIn">
+    <wsdl:part name="parameters" element="tns:getInstructions" />
+  </wsdl:message>
+  <wsdl:message name="getInstructionsSoapOut">
+    <wsdl:part name="parameters" element="tns:getInstructionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPhysicianTemplatesSoapIn">
+    <wsdl:part name="parameters" element="tns:getPhysicianTemplates" />
+  </wsdl:message>
+  <wsdl:message name="getPhysicianTemplatesSoapOut">
+    <wsdl:part name="parameters" element="tns:getPhysicianTemplatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTemplateAttributesSoapIn">
+    <wsdl:part name="parameters" element="tns:getTemplateAttributes" />
+  </wsdl:message>
+  <wsdl:message name="getTemplateAttributesSoapOut">
+    <wsdl:part name="parameters" element="tns:getTemplateAttributesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DemoLookUpSoapIn">
+    <wsdl:part name="parameters" element="tns:DemoLookUp" />
+  </wsdl:message>
+  <wsdl:message name="DemoLookUpSoapOut">
+    <wsdl:part name="parameters" element="tns:DemoLookUpResponse" />
+  </wsdl:message>
+  <wsdl:message name="MTC_DemoLookUpSoapIn">
+    <wsdl:part name="parameters" element="tns:MTC_DemoLookUp" />
+  </wsdl:message>
+  <wsdl:message name="MTC_DemoLookUpSoapOut">
+    <wsdl:part name="parameters" element="tns:MTC_DemoLookUpResponse" />
+  </wsdl:message>
+  <wsdl:message name="getClientCommentsSoapIn">
+    <wsdl:part name="parameters" element="tns:getClientComments" />
+  </wsdl:message>
+  <wsdl:message name="getClientCommentsSoapOut">
+    <wsdl:part name="parameters" element="tns:getClientCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMTCClientCommentsSoapIn">
+    <wsdl:part name="parameters" element="tns:getMTCClientComments" />
+  </wsdl:message>
+  <wsdl:message name="getMTCClientCommentsSoapOut">
+    <wsdl:part name="parameters" element="tns:getMTCClientCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPhySamplesSoapIn">
+    <wsdl:part name="parameters" element="tns:getPhySamples" />
+  </wsdl:message>
+  <wsdl:message name="getPhySamplesSoapOut">
+    <wsdl:part name="parameters" element="tns:getPhySamplesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRefPhySoapIn">
+    <wsdl:part name="parameters" element="tns:getRefPhy" />
+  </wsdl:message>
+  <wsdl:message name="getRefPhySoapOut">
+    <wsdl:part name="parameters" element="tns:getRefPhyResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCommentsSoapIn">
+    <wsdl:part name="parameters" element="tns:getComments" />
+  </wsdl:message>
+  <wsdl:message name="getCommentsSoapOut">
+    <wsdl:part name="parameters" element="tns:getCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckInAuditDictationSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckInAuditDictation" />
+  </wsdl:message>
+  <wsdl:message name="CheckInAuditDictationSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckInAuditDictationResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckInDictationSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckInDictation" />
+  </wsdl:message>
+  <wsdl:message name="CheckInDictationSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckInDictationResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTranscriptionStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTranscriptionStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTranscriptionStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTranscriptionStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddNewPatientSoapIn">
+    <wsdl:part name="parameters" element="tns:AddNewPatient" />
+  </wsdl:message>
+  <wsdl:message name="AddNewPatientSoapOut">
+    <wsdl:part name="parameters" element="tns:AddNewPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="CompletedJobsListSoapIn">
+    <wsdl:part name="parameters" element="tns:CompletedJobsList" />
+  </wsdl:message>
+  <wsdl:message name="CompletedJobsListSoapOut">
+    <wsdl:part name="parameters" element="tns:CompletedJobsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuditedJobsListSoapIn">
+    <wsdl:part name="parameters" element="tns:AuditedJobsList" />
+  </wsdl:message>
+  <wsdl:message name="AuditedJobsListSoapOut">
+    <wsdl:part name="parameters" element="tns:AuditedJobsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ETS_FilesSoapIn">
+    <wsdl:part name="parameters" element="tns:ETS_Files" />
+  </wsdl:message>
+  <wsdl:message name="ETS_FilesSoapOut">
+    <wsdl:part name="parameters" element="tns:ETS_FilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SplitAudioSoapIn">
+    <wsdl:part name="parameters" element="tns:SplitAudio" />
+  </wsdl:message>
+  <wsdl:message name="SplitAudioSoapOut">
+    <wsdl:part name="parameters" element="tns:SplitAudioResponse" />
+  </wsdl:message>
+  <wsdl:message name="getActLocationsSoapIn">
+    <wsdl:part name="parameters" element="tns:getActLocations" />
+  </wsdl:message>
+  <wsdl:message name="getActLocationsSoapOut">
+    <wsdl:part name="parameters" element="tns:getActLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAutoDownloadLogSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAutoDownloadLog" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAutoDownloadLogSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAutoDownloadLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMailAlertsSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMailAlerts" />
+  </wsdl:message>
+  <wsdl:message name="SendMailAlertsSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMailAlertsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getXMLDocSoapIn">
+    <wsdl:part name="parameters" element="tns:getXMLDoc" />
+  </wsdl:message>
+  <wsdl:message name="getXMLDocSoapOut">
+    <wsdl:part name="parameters" element="tns:getXMLDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="setXMLDocSoapIn">
+    <wsdl:part name="parameters" element="tns:setXMLDoc" />
+  </wsdl:message>
+  <wsdl:message name="setXMLDocSoapOut">
+    <wsdl:part name="parameters" element="tns:setXMLDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPathInfoHttpGetIn" />
+  <wsdl:message name="GetPathInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="MTCJobListHttpGetIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Level" type="s:string" />
+    <wsdl:part name="isAuditor" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MTCJobListHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="MTCJobListTestHttpGetIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Level" type="s:string" />
+    <wsdl:part name="isAuditor" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MTCJobListTestHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="chkLoginHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="chkLoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getLevelsbyUserIDHttpGetIn">
+    <wsdl:part name="UserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getLevelsbyUserIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getExtendedHttpGetIn">
+    <wsdl:part name="strTransID" type="s:string" />
+    <wsdl:part name="strTempID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getExtendedHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getExtendedPPHttpGetIn">
+    <wsdl:part name="strTransID" type="s:string" />
+    <wsdl:part name="strTempID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getExtendedPPHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getDictationHttpGetIn">
+    <wsdl:part name="strTransID" type="s:string" />
+    <wsdl:part name="FileType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getDictationHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getNotesHttpGetIn">
+    <wsdl:part name="strTransID" type="s:string" />
+    <wsdl:part name="FileType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getNotesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckOutAuditDictationHttpGetIn">
+    <wsdl:part name="TransID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Level" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckOutAuditDictationHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CheckOutDictationHttpGetIn">
+    <wsdl:part name="TransID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Level" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckOutDictationHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getDictationInfoHttpGetIn">
+    <wsdl:part name="PhyID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Level" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getDictationInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="AuditTemplatesHttpGetIn">
+    <wsdl:part name="TemplateID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="IsTemplateMod" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AuditTemplatesHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="getInstructionsHttpGetIn">
+    <wsdl:part name="AccID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getInstructionsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getPhysicianTemplatesHttpGetIn">
+    <wsdl:part name="PhyID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPhysicianTemplatesHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getTemplateAttributesHttpGetIn">
+    <wsdl:part name="TempID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getTemplateAttributesHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="DemoLookUpHttpGetIn">
+    <wsdl:part name="DemoAccName" type="s:string" />
+    <wsdl:part name="AccountID" type="s:string" />
+    <wsdl:part name="SDate" type="s:string" />
+    <wsdl:part name="eDate" type="s:string" />
+    <wsdl:part name="PFName" type="s:string" />
+    <wsdl:part name="PLName" type="s:string" />
+    <wsdl:part name="MEDRN" type="s:string" />
+    <wsdl:part name="APName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DemoLookUpHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="MTC_DemoLookUpHttpGetIn">
+    <wsdl:part name="DemoAccName" type="s:string" />
+    <wsdl:part name="AccountID" type="s:string" />
+    <wsdl:part name="SDate" type="s:string" />
+    <wsdl:part name="eDate" type="s:string" />
+    <wsdl:part name="PFName" type="s:string" />
+    <wsdl:part name="PLName" type="s:string" />
+    <wsdl:part name="MEDRN" type="s:string" />
+    <wsdl:part name="APName" type="s:string" />
+    <wsdl:part name="DOB" type="s:string" />
+    <wsdl:part name="PatID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MTC_DemoLookUpHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getClientCommentsHttpGetIn">
+    <wsdl:part name="TransID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getClientCommentsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getMTCClientCommentsHttpGetIn">
+    <wsdl:part name="TransID" type="s:string" />
+    <wsdl:part name="ContractorID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getMTCClientCommentsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getPhySamplesHttpGetIn">
+    <wsdl:part name="PhyID" type="s:string" />
+    <wsdl:part name="sName" type="s:string" />
+    <wsdl:part name="sKeyword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPhySamplesHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getRefPhyHttpGetIn">
+    <wsdl:part name="AccID" type="s:string" />
+    <wsdl:part name="WhereClause" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getRefPhyHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getCommentsHttpGetIn">
+    <wsdl:part name="TransID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCommentsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTranscriptionStatusHttpGetIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="TransID" type="s:string" />
+    <wsdl:part name="CheckInLevel" type="s:string" />
+    <wsdl:part name="UserLevel" type="s:string" />
+    <wsdl:part name="Version" type="s:string" />
+    <wsdl:part name="LineCount" type="s:string" />
+    <wsdl:part name="TimeSpent" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTranscriptionStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddNewPatientHttpGetIn">
+    <wsdl:part name="OriTransID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="UserLevel" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddNewPatientHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CompletedJobsListHttpGetIn">
+    <wsdl:part name="JobNumber" type="s:string" />
+    <wsdl:part name="PhyFirst" type="s:string" />
+    <wsdl:part name="PhyLast" type="s:string" />
+    <wsdl:part name="sDate" type="s:string" />
+    <wsdl:part name="eDate" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="UserLevel" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CompletedJobsListHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="AuditedJobsListHttpGetIn">
+    <wsdl:part name="JobNumber" type="s:string" />
+    <wsdl:part name="PhyFirst" type="s:string" />
+    <wsdl:part name="PhyLast" type="s:string" />
+    <wsdl:part name="sDate" type="s:string" />
+    <wsdl:part name="eDate" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="UserLevel" type="s:string" />
+    <wsdl:part name="isauditor" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AuditedJobsListHttpGetOut">
+    <wsdl:part name="Body" element="tns:anyType" />
+  </wsdl:message>
+  <wsdl:message name="ETS_FilesHttpGetIn" />
+  <wsdl:message name="ETS_FilesHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SplitAudioHttpGetIn">
+    <wsdl:part name="CommandArg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SplitAudioHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getActLocationsHttpGetIn">
+    <wsdl:part name="ActID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getActLocationsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAutoDownloadLogHttpGetIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAutoDownloadLogHttpGetOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SendMailAlertsHttpGetIn">
+    <wsdl:part name="strFrom" type="s:string" />
+    <wsdl:part name="strTo" type="s:string" />
+    <wsdl:part name="strSubject" type="s:string" />
+    <wsdl:part name="strBody" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMailAlertsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getXMLDocHttpGetIn">
+    <wsdl:part name="TranscriptionID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getXMLDocHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="setXMLDocHttpGetIn">
+    <wsdl:part name="TranscriptionID" type="s:string" />
+    <wsdl:part name="TranscriptionData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setXMLDocHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetPathInfoHttpPostIn" />
+  <wsdl:message name="GetPathInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="MTCJobListHttpPostIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Level" type="s:string" />
+    <wsdl:part name="isAuditor" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MTCJobListHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="MTCJobListTestHttpPostIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Level" type="s:string" />
+    <wsdl:part name="isAuditor" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MTCJobListTestHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="chkLoginHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="chkLoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getLevelsbyUserIDHttpPostIn">
+    <wsdl:part name="UserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getLevelsbyUserIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getExtendedHttpPostIn">
+    <wsdl:part name="strTransID" type="s:string" />
+    <wsdl:part name="strTempID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getExtendedHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getExtendedPPHttpPostIn">
+    <wsdl:part name="strTransID" type="s:string" />
+    <wsdl:part name="strTempID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getExtendedPPHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getDictationHttpPostIn">
+    <wsdl:part name="strTransID" type="s:string" />
+    <wsdl:part name="FileType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getDictationHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getNotesHttpPostIn">
+    <wsdl:part name="strTransID" type="s:string" />
+    <wsdl:part name="FileType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getNotesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckOutAuditDictationHttpPostIn">
+    <wsdl:part name="TransID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Level" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckOutAuditDictationHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CheckOutDictationHttpPostIn">
+    <wsdl:part name="TransID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Level" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckOutDictationHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getDictationInfoHttpPostIn">
+    <wsdl:part name="PhyID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="Level" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getDictationInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="AuditTemplatesHttpPostIn">
+    <wsdl:part name="TemplateID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="IsTemplateMod" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AuditTemplatesHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="getInstructionsHttpPostIn">
+    <wsdl:part name="AccID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getInstructionsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getPhysicianTemplatesHttpPostIn">
+    <wsdl:part name="PhyID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPhysicianTemplatesHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getTemplateAttributesHttpPostIn">
+    <wsdl:part name="TempID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getTemplateAttributesHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="DemoLookUpHttpPostIn">
+    <wsdl:part name="DemoAccName" type="s:string" />
+    <wsdl:part name="AccountID" type="s:string" />
+    <wsdl:part name="SDate" type="s:string" />
+    <wsdl:part name="eDate" type="s:string" />
+    <wsdl:part name="PFName" type="s:string" />
+    <wsdl:part name="PLName" type="s:string" />
+    <wsdl:part name="MEDRN" type="s:string" />
+    <wsdl:part name="APName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DemoLookUpHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="MTC_DemoLookUpHttpPostIn">
+    <wsdl:part name="DemoAccName" type="s:string" />
+    <wsdl:part name="AccountID" type="s:string" />
+    <wsdl:part name="SDate" type="s:string" />
+    <wsdl:part name="eDate" type="s:string" />
+    <wsdl:part name="PFName" type="s:string" />
+    <wsdl:part name="PLName" type="s:string" />
+    <wsdl:part name="MEDRN" type="s:string" />
+    <wsdl:part name="APName" type="s:string" />
+    <wsdl:part name="DOB" type="s:string" />
+    <wsdl:part name="PatID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="MTC_DemoLookUpHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getClientCommentsHttpPostIn">
+    <wsdl:part name="TransID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getClientCommentsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getMTCClientCommentsHttpPostIn">
+    <wsdl:part name="TransID" type="s:string" />
+    <wsdl:part name="ContractorID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getMTCClientCommentsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getPhySamplesHttpPostIn">
+    <wsdl:part name="PhyID" type="s:string" />
+    <wsdl:part name="sName" type="s:string" />
+    <wsdl:part name="sKeyword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getPhySamplesHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getRefPhyHttpPostIn">
+    <wsdl:part name="AccID" type="s:string" />
+    <wsdl:part name="WhereClause" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getRefPhyHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getCommentsHttpPostIn">
+    <wsdl:part name="TransID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCommentsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTranscriptionStatusHttpPostIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="TransID" type="s:string" />
+    <wsdl:part name="CheckInLevel" type="s:string" />
+    <wsdl:part name="UserLevel" type="s:string" />
+    <wsdl:part name="Version" type="s:string" />
+    <wsdl:part name="LineCount" type="s:string" />
+    <wsdl:part name="TimeSpent" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTranscriptionStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="AddNewPatientHttpPostIn">
+    <wsdl:part name="OriTransID" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="UserLevel" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddNewPatientHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CompletedJobsListHttpPostIn">
+    <wsdl:part name="JobNumber" type="s:string" />
+    <wsdl:part name="PhyFirst" type="s:string" />
+    <wsdl:part name="PhyLast" type="s:string" />
+    <wsdl:part name="sDate" type="s:string" />
+    <wsdl:part name="eDate" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="UserLevel" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CompletedJobsListHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="AuditedJobsListHttpPostIn">
+    <wsdl:part name="JobNumber" type="s:string" />
+    <wsdl:part name="PhyFirst" type="s:string" />
+    <wsdl:part name="PhyLast" type="s:string" />
+    <wsdl:part name="sDate" type="s:string" />
+    <wsdl:part name="eDate" type="s:string" />
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="UserLevel" type="s:string" />
+    <wsdl:part name="isauditor" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AuditedJobsListHttpPostOut">
+    <wsdl:part name="Body" element="tns:anyType" />
+  </wsdl:message>
+  <wsdl:message name="ETS_FilesHttpPostIn" />
+  <wsdl:message name="ETS_FilesHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SplitAudioHttpPostIn">
+    <wsdl:part name="CommandArg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SplitAudioHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="getActLocationsHttpPostIn">
+    <wsdl:part name="ActID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getActLocationsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAutoDownloadLogHttpPostIn">
+    <wsdl:part name="UserID" type="s:string" />
+    <wsdl:part name="State" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAutoDownloadLogHttpPostOut">
+    <wsdl:part name="Body" element="tns:int" />
+  </wsdl:message>
+  <wsdl:message name="SendMailAlertsHttpPostIn">
+    <wsdl:part name="strFrom" type="s:string" />
+    <wsdl:part name="strTo" type="s:string" />
+    <wsdl:part name="strSubject" type="s:string" />
+    <wsdl:part name="strBody" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMailAlertsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getXMLDocHttpPostIn">
+    <wsdl:part name="TranscriptionID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getXMLDocHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="setXMLDocHttpPostIn">
+    <wsdl:part name="TranscriptionID" type="s:string" />
+    <wsdl:part name="TranscriptionData" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="setXMLDocHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="MTClientServiceSoap">
+    <wsdl:operation name="GetPathInfo">
+      <wsdl:input message="tns:GetPathInfoSoapIn" />
+      <wsdl:output message="tns:GetPathInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MTCJobList">
+      <wsdl:input message="tns:MTCJobListSoapIn" />
+      <wsdl:output message="tns:MTCJobListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MTCJobListTest">
+      <wsdl:input message="tns:MTCJobListTestSoapIn" />
+      <wsdl:output message="tns:MTCJobListTestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="chkLogin">
+      <wsdl:input message="tns:chkLoginSoapIn" />
+      <wsdl:output message="tns:chkLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getLevelsbyUserID">
+      <wsdl:input message="tns:getLevelsbyUserIDSoapIn" />
+      <wsdl:output message="tns:getLevelsbyUserIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getExtended">
+      <wsdl:input message="tns:getExtendedSoapIn" />
+      <wsdl:output message="tns:getExtendedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getExtendedPP">
+      <wsdl:input message="tns:getExtendedPPSoapIn" />
+      <wsdl:output message="tns:getExtendedPPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDictation">
+      <wsdl:input message="tns:getDictationSoapIn" />
+      <wsdl:output message="tns:getDictationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getNotes">
+      <wsdl:input message="tns:getNotesSoapIn" />
+      <wsdl:output message="tns:getNotesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutAuditDictation">
+      <wsdl:input message="tns:CheckOutAuditDictationSoapIn" />
+      <wsdl:output message="tns:CheckOutAuditDictationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutDictation">
+      <wsdl:input message="tns:CheckOutDictationSoapIn" />
+      <wsdl:output message="tns:CheckOutDictationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDictationInfo">
+      <wsdl:input message="tns:getDictationInfoSoapIn" />
+      <wsdl:output message="tns:getDictationInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuditTemplates">
+      <wsdl:input message="tns:AuditTemplatesSoapIn" />
+      <wsdl:output message="tns:AuditTemplatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getInstructions">
+      <wsdl:input message="tns:getInstructionsSoapIn" />
+      <wsdl:output message="tns:getInstructionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPhysicianTemplates">
+      <wsdl:input message="tns:getPhysicianTemplatesSoapIn" />
+      <wsdl:output message="tns:getPhysicianTemplatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTemplateAttributes">
+      <wsdl:input message="tns:getTemplateAttributesSoapIn" />
+      <wsdl:output message="tns:getTemplateAttributesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DemoLookUp">
+      <wsdl:input message="tns:DemoLookUpSoapIn" />
+      <wsdl:output message="tns:DemoLookUpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MTC_DemoLookUp">
+      <wsdl:input message="tns:MTC_DemoLookUpSoapIn" />
+      <wsdl:output message="tns:MTC_DemoLookUpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getClientComments">
+      <wsdl:input message="tns:getClientCommentsSoapIn" />
+      <wsdl:output message="tns:getClientCommentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMTCClientComments">
+      <wsdl:input message="tns:getMTCClientCommentsSoapIn" />
+      <wsdl:output message="tns:getMTCClientCommentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPhySamples">
+      <wsdl:input message="tns:getPhySamplesSoapIn" />
+      <wsdl:output message="tns:getPhySamplesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getRefPhy">
+      <wsdl:input message="tns:getRefPhySoapIn" />
+      <wsdl:output message="tns:getRefPhySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getComments">
+      <wsdl:input message="tns:getCommentsSoapIn" />
+      <wsdl:output message="tns:getCommentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckInAuditDictation">
+      <wsdl:input message="tns:CheckInAuditDictationSoapIn" />
+      <wsdl:output message="tns:CheckInAuditDictationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckInDictation">
+      <wsdl:input message="tns:CheckInDictationSoapIn" />
+      <wsdl:output message="tns:CheckInDictationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTranscriptionStatus">
+      <wsdl:input message="tns:UpdateTranscriptionStatusSoapIn" />
+      <wsdl:output message="tns:UpdateTranscriptionStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewPatient">
+      <wsdl:input message="tns:AddNewPatientSoapIn" />
+      <wsdl:output message="tns:AddNewPatientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompletedJobsList">
+      <wsdl:input message="tns:CompletedJobsListSoapIn" />
+      <wsdl:output message="tns:CompletedJobsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuditedJobsList">
+      <wsdl:input message="tns:AuditedJobsListSoapIn" />
+      <wsdl:output message="tns:AuditedJobsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ETS_Files">
+      <wsdl:input message="tns:ETS_FilesSoapIn" />
+      <wsdl:output message="tns:ETS_FilesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SplitAudio">
+      <wsdl:input message="tns:SplitAudioSoapIn" />
+      <wsdl:output message="tns:SplitAudioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getActLocations">
+      <wsdl:input message="tns:getActLocationsSoapIn" />
+      <wsdl:output message="tns:getActLocationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAutoDownloadLog">
+      <wsdl:input message="tns:UpdateAutoDownloadLogSoapIn" />
+      <wsdl:output message="tns:UpdateAutoDownloadLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMailAlerts">
+      <wsdl:input message="tns:SendMailAlertsSoapIn" />
+      <wsdl:output message="tns:SendMailAlertsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getXMLDoc">
+      <wsdl:input message="tns:getXMLDocSoapIn" />
+      <wsdl:output message="tns:getXMLDocSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setXMLDoc">
+      <wsdl:input message="tns:setXMLDocSoapIn" />
+      <wsdl:output message="tns:setXMLDocSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MTClientServiceHttpGet">
+    <wsdl:operation name="GetPathInfo">
+      <wsdl:input message="tns:GetPathInfoHttpGetIn" />
+      <wsdl:output message="tns:GetPathInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MTCJobList">
+      <wsdl:input message="tns:MTCJobListHttpGetIn" />
+      <wsdl:output message="tns:MTCJobListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MTCJobListTest">
+      <wsdl:input message="tns:MTCJobListTestHttpGetIn" />
+      <wsdl:output message="tns:MTCJobListTestHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="chkLogin">
+      <wsdl:input message="tns:chkLoginHttpGetIn" />
+      <wsdl:output message="tns:chkLoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getLevelsbyUserID">
+      <wsdl:input message="tns:getLevelsbyUserIDHttpGetIn" />
+      <wsdl:output message="tns:getLevelsbyUserIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getExtended">
+      <wsdl:input message="tns:getExtendedHttpGetIn" />
+      <wsdl:output message="tns:getExtendedHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getExtendedPP">
+      <wsdl:input message="tns:getExtendedPPHttpGetIn" />
+      <wsdl:output message="tns:getExtendedPPHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDictation">
+      <wsdl:input message="tns:getDictationHttpGetIn" />
+      <wsdl:output message="tns:getDictationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getNotes">
+      <wsdl:input message="tns:getNotesHttpGetIn" />
+      <wsdl:output message="tns:getNotesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutAuditDictation">
+      <wsdl:input message="tns:CheckOutAuditDictationHttpGetIn" />
+      <wsdl:output message="tns:CheckOutAuditDictationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutDictation">
+      <wsdl:input message="tns:CheckOutDictationHttpGetIn" />
+      <wsdl:output message="tns:CheckOutDictationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDictationInfo">
+      <wsdl:input message="tns:getDictationInfoHttpGetIn" />
+      <wsdl:output message="tns:getDictationInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuditTemplates">
+      <wsdl:input message="tns:AuditTemplatesHttpGetIn" />
+      <wsdl:output message="tns:AuditTemplatesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getInstructions">
+      <wsdl:input message="tns:getInstructionsHttpGetIn" />
+      <wsdl:output message="tns:getInstructionsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPhysicianTemplates">
+      <wsdl:input message="tns:getPhysicianTemplatesHttpGetIn" />
+      <wsdl:output message="tns:getPhysicianTemplatesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTemplateAttributes">
+      <wsdl:input message="tns:getTemplateAttributesHttpGetIn" />
+      <wsdl:output message="tns:getTemplateAttributesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DemoLookUp">
+      <wsdl:input message="tns:DemoLookUpHttpGetIn" />
+      <wsdl:output message="tns:DemoLookUpHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MTC_DemoLookUp">
+      <wsdl:input message="tns:MTC_DemoLookUpHttpGetIn" />
+      <wsdl:output message="tns:MTC_DemoLookUpHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getClientComments">
+      <wsdl:input message="tns:getClientCommentsHttpGetIn" />
+      <wsdl:output message="tns:getClientCommentsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMTCClientComments">
+      <wsdl:input message="tns:getMTCClientCommentsHttpGetIn" />
+      <wsdl:output message="tns:getMTCClientCommentsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPhySamples">
+      <wsdl:input message="tns:getPhySamplesHttpGetIn" />
+      <wsdl:output message="tns:getPhySamplesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getRefPhy">
+      <wsdl:input message="tns:getRefPhyHttpGetIn" />
+      <wsdl:output message="tns:getRefPhyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getComments">
+      <wsdl:input message="tns:getCommentsHttpGetIn" />
+      <wsdl:output message="tns:getCommentsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTranscriptionStatus">
+      <wsdl:input message="tns:UpdateTranscriptionStatusHttpGetIn" />
+      <wsdl:output message="tns:UpdateTranscriptionStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewPatient">
+      <wsdl:input message="tns:AddNewPatientHttpGetIn" />
+      <wsdl:output message="tns:AddNewPatientHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompletedJobsList">
+      <wsdl:input message="tns:CompletedJobsListHttpGetIn" />
+      <wsdl:output message="tns:CompletedJobsListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuditedJobsList">
+      <wsdl:input message="tns:AuditedJobsListHttpGetIn" />
+      <wsdl:output message="tns:AuditedJobsListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ETS_Files">
+      <wsdl:input message="tns:ETS_FilesHttpGetIn" />
+      <wsdl:output message="tns:ETS_FilesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SplitAudio">
+      <wsdl:input message="tns:SplitAudioHttpGetIn" />
+      <wsdl:output message="tns:SplitAudioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getActLocations">
+      <wsdl:input message="tns:getActLocationsHttpGetIn" />
+      <wsdl:output message="tns:getActLocationsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAutoDownloadLog">
+      <wsdl:input message="tns:UpdateAutoDownloadLogHttpGetIn" />
+      <wsdl:output message="tns:UpdateAutoDownloadLogHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMailAlerts">
+      <wsdl:input message="tns:SendMailAlertsHttpGetIn" />
+      <wsdl:output message="tns:SendMailAlertsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getXMLDoc">
+      <wsdl:input message="tns:getXMLDocHttpGetIn" />
+      <wsdl:output message="tns:getXMLDocHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setXMLDoc">
+      <wsdl:input message="tns:setXMLDocHttpGetIn" />
+      <wsdl:output message="tns:setXMLDocHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MTClientServiceHttpPost">
+    <wsdl:operation name="GetPathInfo">
+      <wsdl:input message="tns:GetPathInfoHttpPostIn" />
+      <wsdl:output message="tns:GetPathInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MTCJobList">
+      <wsdl:input message="tns:MTCJobListHttpPostIn" />
+      <wsdl:output message="tns:MTCJobListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MTCJobListTest">
+      <wsdl:input message="tns:MTCJobListTestHttpPostIn" />
+      <wsdl:output message="tns:MTCJobListTestHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="chkLogin">
+      <wsdl:input message="tns:chkLoginHttpPostIn" />
+      <wsdl:output message="tns:chkLoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getLevelsbyUserID">
+      <wsdl:input message="tns:getLevelsbyUserIDHttpPostIn" />
+      <wsdl:output message="tns:getLevelsbyUserIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getExtended">
+      <wsdl:input message="tns:getExtendedHttpPostIn" />
+      <wsdl:output message="tns:getExtendedHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getExtendedPP">
+      <wsdl:input message="tns:getExtendedPPHttpPostIn" />
+      <wsdl:output message="tns:getExtendedPPHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDictation">
+      <wsdl:input message="tns:getDictationHttpPostIn" />
+      <wsdl:output message="tns:getDictationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getNotes">
+      <wsdl:input message="tns:getNotesHttpPostIn" />
+      <wsdl:output message="tns:getNotesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutAuditDictation">
+      <wsdl:input message="tns:CheckOutAuditDictationHttpPostIn" />
+      <wsdl:output message="tns:CheckOutAuditDictationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutDictation">
+      <wsdl:input message="tns:CheckOutDictationHttpPostIn" />
+      <wsdl:output message="tns:CheckOutDictationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDictationInfo">
+      <wsdl:input message="tns:getDictationInfoHttpPostIn" />
+      <wsdl:output message="tns:getDictationInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuditTemplates">
+      <wsdl:input message="tns:AuditTemplatesHttpPostIn" />
+      <wsdl:output message="tns:AuditTemplatesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getInstructions">
+      <wsdl:input message="tns:getInstructionsHttpPostIn" />
+      <wsdl:output message="tns:getInstructionsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPhysicianTemplates">
+      <wsdl:input message="tns:getPhysicianTemplatesHttpPostIn" />
+      <wsdl:output message="tns:getPhysicianTemplatesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTemplateAttributes">
+      <wsdl:input message="tns:getTemplateAttributesHttpPostIn" />
+      <wsdl:output message="tns:getTemplateAttributesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DemoLookUp">
+      <wsdl:input message="tns:DemoLookUpHttpPostIn" />
+      <wsdl:output message="tns:DemoLookUpHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MTC_DemoLookUp">
+      <wsdl:input message="tns:MTC_DemoLookUpHttpPostIn" />
+      <wsdl:output message="tns:MTC_DemoLookUpHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getClientComments">
+      <wsdl:input message="tns:getClientCommentsHttpPostIn" />
+      <wsdl:output message="tns:getClientCommentsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getMTCClientComments">
+      <wsdl:input message="tns:getMTCClientCommentsHttpPostIn" />
+      <wsdl:output message="tns:getMTCClientCommentsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPhySamples">
+      <wsdl:input message="tns:getPhySamplesHttpPostIn" />
+      <wsdl:output message="tns:getPhySamplesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getRefPhy">
+      <wsdl:input message="tns:getRefPhyHttpPostIn" />
+      <wsdl:output message="tns:getRefPhyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getComments">
+      <wsdl:input message="tns:getCommentsHttpPostIn" />
+      <wsdl:output message="tns:getCommentsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTranscriptionStatus">
+      <wsdl:input message="tns:UpdateTranscriptionStatusHttpPostIn" />
+      <wsdl:output message="tns:UpdateTranscriptionStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewPatient">
+      <wsdl:input message="tns:AddNewPatientHttpPostIn" />
+      <wsdl:output message="tns:AddNewPatientHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CompletedJobsList">
+      <wsdl:input message="tns:CompletedJobsListHttpPostIn" />
+      <wsdl:output message="tns:CompletedJobsListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuditedJobsList">
+      <wsdl:input message="tns:AuditedJobsListHttpPostIn" />
+      <wsdl:output message="tns:AuditedJobsListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ETS_Files">
+      <wsdl:input message="tns:ETS_FilesHttpPostIn" />
+      <wsdl:output message="tns:ETS_FilesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SplitAudio">
+      <wsdl:input message="tns:SplitAudioHttpPostIn" />
+      <wsdl:output message="tns:SplitAudioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getActLocations">
+      <wsdl:input message="tns:getActLocationsHttpPostIn" />
+      <wsdl:output message="tns:getActLocationsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAutoDownloadLog">
+      <wsdl:input message="tns:UpdateAutoDownloadLogHttpPostIn" />
+      <wsdl:output message="tns:UpdateAutoDownloadLogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMailAlerts">
+      <wsdl:input message="tns:SendMailAlertsHttpPostIn" />
+      <wsdl:output message="tns:SendMailAlertsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getXMLDoc">
+      <wsdl:input message="tns:getXMLDocHttpPostIn" />
+      <wsdl:output message="tns:getXMLDocHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setXMLDoc">
+      <wsdl:input message="tns:setXMLDocHttpPostIn" />
+      <wsdl:output message="tns:setXMLDocHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MTClientServiceSoap" type="tns:MTClientServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPathInfo">
+      <soap:operation soapAction="http://tempuri.org/GetPathInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MTCJobList">
+      <soap:operation soapAction="http://tempuri.org/MTCJobList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MTCJobListTest">
+      <soap:operation soapAction="http://tempuri.org/MTCJobListTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="chkLogin">
+      <soap:operation soapAction="http://tempuri.org/chkLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLevelsbyUserID">
+      <soap:operation soapAction="http://tempuri.org/getLevelsbyUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExtended">
+      <soap:operation soapAction="http://tempuri.org/getExtended" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExtendedPP">
+      <soap:operation soapAction="http://tempuri.org/getExtendedPP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDictation">
+      <soap:operation soapAction="http://tempuri.org/getDictation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNotes">
+      <soap:operation soapAction="http://tempuri.org/getNotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutAuditDictation">
+      <soap:operation soapAction="http://tempuri.org/CheckOutAuditDictation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutDictation">
+      <soap:operation soapAction="http://tempuri.org/CheckOutDictation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDictationInfo">
+      <soap:operation soapAction="http://tempuri.org/getDictationInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuditTemplates">
+      <soap:operation soapAction="http://tempuri.org/AuditTemplates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInstructions">
+      <soap:operation soapAction="http://tempuri.org/getInstructions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPhysicianTemplates">
+      <soap:operation soapAction="http://tempuri.org/getPhysicianTemplates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTemplateAttributes">
+      <soap:operation soapAction="http://tempuri.org/getTemplateAttributes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DemoLookUp">
+      <soap:operation soapAction="http://tempuri.org/DemoLookUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MTC_DemoLookUp">
+      <soap:operation soapAction="http://tempuri.org/MTC_DemoLookUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClientComments">
+      <soap:operation soapAction="http://tempuri.org/getClientComments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMTCClientComments">
+      <soap:operation soapAction="http://tempuri.org/getMTCClientComments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPhySamples">
+      <soap:operation soapAction="http://tempuri.org/getPhySamples" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRefPhy">
+      <soap:operation soapAction="http://tempuri.org/getRefPhy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getComments">
+      <soap:operation soapAction="http://tempuri.org/getComments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInAuditDictation">
+      <soap:operation soapAction="http://tempuri.org/CheckInAuditDictation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInDictation">
+      <soap:operation soapAction="http://tempuri.org/CheckInDictation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTranscriptionStatus">
+      <soap:operation soapAction="http://tempuri.org/UpdateTranscriptionStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewPatient">
+      <soap:operation soapAction="http://tempuri.org/AddNewPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompletedJobsList">
+      <soap:operation soapAction="http://tempuri.org/CompletedJobsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuditedJobsList">
+      <soap:operation soapAction="http://tempuri.org/AuditedJobsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ETS_Files">
+      <soap:operation soapAction="http://tempuri.org/ETS_Files" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SplitAudio">
+      <soap:operation soapAction="http://tempuri.org/SplitAudio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActLocations">
+      <soap:operation soapAction="http://tempuri.org/getActLocations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAutoDownloadLog">
+      <soap:operation soapAction="http://tempuri.org/UpdateAutoDownloadLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMailAlerts">
+      <soap:operation soapAction="http://tempuri.org/SendMailAlerts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getXMLDoc">
+      <soap:operation soapAction="http://tempuri.org/getXMLDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setXMLDoc">
+      <soap:operation soapAction="http://tempuri.org/setXMLDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MTClientServiceSoap12" type="tns:MTClientServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPathInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetPathInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MTCJobList">
+      <soap12:operation soapAction="http://tempuri.org/MTCJobList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MTCJobListTest">
+      <soap12:operation soapAction="http://tempuri.org/MTCJobListTest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="chkLogin">
+      <soap12:operation soapAction="http://tempuri.org/chkLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLevelsbyUserID">
+      <soap12:operation soapAction="http://tempuri.org/getLevelsbyUserID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExtended">
+      <soap12:operation soapAction="http://tempuri.org/getExtended" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExtendedPP">
+      <soap12:operation soapAction="http://tempuri.org/getExtendedPP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDictation">
+      <soap12:operation soapAction="http://tempuri.org/getDictation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNotes">
+      <soap12:operation soapAction="http://tempuri.org/getNotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutAuditDictation">
+      <soap12:operation soapAction="http://tempuri.org/CheckOutAuditDictation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutDictation">
+      <soap12:operation soapAction="http://tempuri.org/CheckOutDictation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDictationInfo">
+      <soap12:operation soapAction="http://tempuri.org/getDictationInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuditTemplates">
+      <soap12:operation soapAction="http://tempuri.org/AuditTemplates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInstructions">
+      <soap12:operation soapAction="http://tempuri.org/getInstructions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPhysicianTemplates">
+      <soap12:operation soapAction="http://tempuri.org/getPhysicianTemplates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTemplateAttributes">
+      <soap12:operation soapAction="http://tempuri.org/getTemplateAttributes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DemoLookUp">
+      <soap12:operation soapAction="http://tempuri.org/DemoLookUp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MTC_DemoLookUp">
+      <soap12:operation soapAction="http://tempuri.org/MTC_DemoLookUp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClientComments">
+      <soap12:operation soapAction="http://tempuri.org/getClientComments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMTCClientComments">
+      <soap12:operation soapAction="http://tempuri.org/getMTCClientComments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPhySamples">
+      <soap12:operation soapAction="http://tempuri.org/getPhySamples" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRefPhy">
+      <soap12:operation soapAction="http://tempuri.org/getRefPhy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getComments">
+      <soap12:operation soapAction="http://tempuri.org/getComments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInAuditDictation">
+      <soap12:operation soapAction="http://tempuri.org/CheckInAuditDictation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckInDictation">
+      <soap12:operation soapAction="http://tempuri.org/CheckInDictation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTranscriptionStatus">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTranscriptionStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewPatient">
+      <soap12:operation soapAction="http://tempuri.org/AddNewPatient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompletedJobsList">
+      <soap12:operation soapAction="http://tempuri.org/CompletedJobsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuditedJobsList">
+      <soap12:operation soapAction="http://tempuri.org/AuditedJobsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ETS_Files">
+      <soap12:operation soapAction="http://tempuri.org/ETS_Files" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SplitAudio">
+      <soap12:operation soapAction="http://tempuri.org/SplitAudio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActLocations">
+      <soap12:operation soapAction="http://tempuri.org/getActLocations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAutoDownloadLog">
+      <soap12:operation soapAction="http://tempuri.org/UpdateAutoDownloadLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMailAlerts">
+      <soap12:operation soapAction="http://tempuri.org/SendMailAlerts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getXMLDoc">
+      <soap12:operation soapAction="http://tempuri.org/getXMLDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setXMLDoc">
+      <soap12:operation soapAction="http://tempuri.org/setXMLDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MTClientServiceHttpGet" type="tns:MTClientServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetPathInfo">
+      <http:operation location="/GetPathInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MTCJobList">
+      <http:operation location="/MTCJobList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MTCJobListTest">
+      <http:operation location="/MTCJobListTest" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="chkLogin">
+      <http:operation location="/chkLogin" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLevelsbyUserID">
+      <http:operation location="/getLevelsbyUserID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExtended">
+      <http:operation location="/getExtended" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExtendedPP">
+      <http:operation location="/getExtendedPP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDictation">
+      <http:operation location="/getDictation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNotes">
+      <http:operation location="/getNotes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutAuditDictation">
+      <http:operation location="/CheckOutAuditDictation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutDictation">
+      <http:operation location="/CheckOutDictation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDictationInfo">
+      <http:operation location="/getDictationInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuditTemplates">
+      <http:operation location="/AuditTemplates" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInstructions">
+      <http:operation location="/getInstructions" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPhysicianTemplates">
+      <http:operation location="/getPhysicianTemplates" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTemplateAttributes">
+      <http:operation location="/getTemplateAttributes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DemoLookUp">
+      <http:operation location="/DemoLookUp" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MTC_DemoLookUp">
+      <http:operation location="/MTC_DemoLookUp" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClientComments">
+      <http:operation location="/getClientComments" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMTCClientComments">
+      <http:operation location="/getMTCClientComments" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPhySamples">
+      <http:operation location="/getPhySamples" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRefPhy">
+      <http:operation location="/getRefPhy" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getComments">
+      <http:operation location="/getComments" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTranscriptionStatus">
+      <http:operation location="/UpdateTranscriptionStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewPatient">
+      <http:operation location="/AddNewPatient" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompletedJobsList">
+      <http:operation location="/CompletedJobsList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuditedJobsList">
+      <http:operation location="/AuditedJobsList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ETS_Files">
+      <http:operation location="/ETS_Files" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SplitAudio">
+      <http:operation location="/SplitAudio" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActLocations">
+      <http:operation location="/getActLocations" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAutoDownloadLog">
+      <http:operation location="/UpdateAutoDownloadLog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMailAlerts">
+      <http:operation location="/SendMailAlerts" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getXMLDoc">
+      <http:operation location="/getXMLDoc" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setXMLDoc">
+      <http:operation location="/setXMLDoc" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MTClientServiceHttpPost" type="tns:MTClientServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetPathInfo">
+      <http:operation location="/GetPathInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MTCJobList">
+      <http:operation location="/MTCJobList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MTCJobListTest">
+      <http:operation location="/MTCJobListTest" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="chkLogin">
+      <http:operation location="/chkLogin" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLevelsbyUserID">
+      <http:operation location="/getLevelsbyUserID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExtended">
+      <http:operation location="/getExtended" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExtendedPP">
+      <http:operation location="/getExtendedPP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDictation">
+      <http:operation location="/getDictation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNotes">
+      <http:operation location="/getNotes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutAuditDictation">
+      <http:operation location="/CheckOutAuditDictation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckOutDictation">
+      <http:operation location="/CheckOutDictation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDictationInfo">
+      <http:operation location="/getDictationInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuditTemplates">
+      <http:operation location="/AuditTemplates" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInstructions">
+      <http:operation location="/getInstructions" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPhysicianTemplates">
+      <http:operation location="/getPhysicianTemplates" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTemplateAttributes">
+      <http:operation location="/getTemplateAttributes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DemoLookUp">
+      <http:operation location="/DemoLookUp" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MTC_DemoLookUp">
+      <http:operation location="/MTC_DemoLookUp" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClientComments">
+      <http:operation location="/getClientComments" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMTCClientComments">
+      <http:operation location="/getMTCClientComments" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPhySamples">
+      <http:operation location="/getPhySamples" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRefPhy">
+      <http:operation location="/getRefPhy" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getComments">
+      <http:operation location="/getComments" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTranscriptionStatus">
+      <http:operation location="/UpdateTranscriptionStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewPatient">
+      <http:operation location="/AddNewPatient" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompletedJobsList">
+      <http:operation location="/CompletedJobsList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuditedJobsList">
+      <http:operation location="/AuditedJobsList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ETS_Files">
+      <http:operation location="/ETS_Files" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SplitAudio">
+      <http:operation location="/SplitAudio" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActLocations">
+      <http:operation location="/getActLocations" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAutoDownloadLog">
+      <http:operation location="/UpdateAutoDownloadLog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMailAlerts">
+      <http:operation location="/SendMailAlerts" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getXMLDoc">
+      <http:operation location="/getXMLDoc" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setXMLDoc">
+      <http:operation location="/setXMLDoc" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MTClientService">
+    <wsdl:port name="MTClientServiceSoap" binding="tns:MTClientServiceSoap">
+      <soap:address location="https://onesxfmmodal.securexsoft.com/mtclient/mtclientservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MTClientServiceSoap12" binding="tns:MTClientServiceSoap12">
+      <soap12:address location="https://onesxfmmodal.securexsoft.com/mtclient/mtclientservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MTClientServiceHttpGet" binding="tns:MTClientServiceHttpGet">
+      <http:address location="https://onesxfmmodal.securexsoft.com/mtclient/mtclientservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MTClientServiceHttpPost" binding="tns:MTClientServiceHttpPost">
+      <http:address location="https://onesxfmmodal.securexsoft.com/mtclient/mtclientservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
